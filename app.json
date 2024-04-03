@@ -1,0 +1,58 @@
+{
+  "name": "????-?-???????",
+  "description": "[????-?-??????? ?????? ???????? ???? ??? ?.",
+    "logo": "https://telegra.ph//file/5e3b0cea5e6f3c1bb8809.jpg",
+
+  "stack": "heroku-22",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "@????????? ?????? ??? ????? ??? ???",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Owner id",
+      "required": true
+    },
+    "OWNER": {
+      "description": "Owner user Name ",
+      "required": true
+    },
+    "STRING_SESSION1": {
+      "description": "Telegram Session String",
+      "required": true
+    },
+    "BOTLOG_CHAT_ID": {
+      "description": "Bot Log Channel id ",
+      "required": false,
+      "value": "-100"
+    },
+    "HEROKU_API_KEY": {
+      "description": "Heroku Api Key https://dashboard.heroku.com/account",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Heroku App Name ",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/interconnectit/heroku-buildpack-ffmpeg"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
+
